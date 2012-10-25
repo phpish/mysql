@@ -1,6 +1,6 @@
 <?php
 
-	namespace phpish\db;
+	namespace phpish\mysql;
 
 
 	function connect()
