@@ -70,15 +70,35 @@
 	}
 
 
+	function num_rows($result)
+	{
+		return mysqli_num_rows($result);
+	}
+
+
 	function insert()
 	{
 
 	}
 
 
+	function insert_id($link=NULL)
+	{
+		$link = $link ?: _link();
+		return mysqli_insert_id($link)
+	}
+
+
 	function update()
 	{
 
+	}
+
+
+	function affected_rows($link=NULL)
+	{
+		$link = $link ?: _link();
+		return  mysqli_affected_rows($link);
 	}
 
 
