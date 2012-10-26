@@ -42,7 +42,7 @@
 	}
 
 
-	funcion rows($query, $params, $link=NULL)
+	function rows($query, $params, $link=NULL)
 	{
 		$rows = array();
 		if ($result = query($query, $params, $link))
@@ -56,7 +56,7 @@
 	}
 
 
-	funcion row($query, $params, $link=NULL)
+	function row($query, $params, $link=NULL)
 	{
 		$row = array();
 		if ($result = query($query, $params, $link))
