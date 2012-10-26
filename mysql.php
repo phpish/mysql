@@ -33,16 +33,18 @@
 	}
 
 
-	function query($query, $params, $link=NULL)
+	function query($query, $params=array(), $link=NULL)
 	{
 		$link = $link ?: _link();
-		array_map('mysqli_real_escape_string', $params);
+		array_map(function($val) use($link) {
+			mysqli_real_escape_string($link, $val);
+		}, $params);
 		$query = vsprintf($query, $params);
 		return mysqli_query($link, $query);
 	}
 
 
-	function rows($query, $params, $link=NULL)
+	function rows($query, $params=array(), $link=NULL)
 	{
 		$rows = array();
 		if ($result = query($query, $params, $link))
@@ -56,7 +58,7 @@
 	}
 
 
-	function row($query, $params, $link=NULL)
+	function row($query, $params=array(), $link=NULL)
 	{
 		$row = array();
 		if ($result = query($query, $params, $link))
