@@ -20,7 +20,7 @@
 			return false;
 		}
 
-//TODO: Allow setting options like connection timeout: http://www.php.net/manual/en/mysqli.options.php
+# TODO: Allow setting options like connection timeout: http://www.php.net/manual/en/mysqli.options.php
 
 		if (!mysqli_real_connect($link, $host, $username, $password, $database))
 		{
@@ -78,7 +78,7 @@
 
 	function insert()
 	{
-
+		# TODO: insert('table', array('field1'=>array('%s'=>$value1)))
 	}
 
 
@@ -91,7 +91,7 @@
 
 	function update()
 	{
-
+		# TODO: update('table', array('field1'=>array('%s'=>$value1)), array('id'=>array('%d'=>1)))
 	}
 
 
