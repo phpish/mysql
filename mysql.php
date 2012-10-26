@@ -61,7 +61,7 @@
 		$row = array();
 		if ($result = query($query, $params, $link))
 		{
-			$row = mysqli_fetch_assoc($result)
+			$row = mysqli_fetch_assoc($result);
 			mysqli_free_result($result);
 		}
 
@@ -85,7 +85,7 @@
 	function insert_id($link=NULL)
 	{
 		$link = $link ?: _link();
-		return mysqli_insert_id($link)
+		return mysqli_insert_id($link);
 	}
 
 
