@@ -110,4 +110,11 @@
 		return mysqli_close($link);
 	}
 
+
+	function error($link=NUll)
+	{
+		$link = $link ?: _link();
+		return mysqli_error($link);
+	}
+
 ?>
