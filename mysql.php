@@ -36,8 +36,8 @@
 	function query($query, $params=array(), $link=NULL)
 	{
 		$link = $link ?: _link();
-		array_map(function($val) use($link) {
-			mysqli_real_escape_string($link, $val);
+		$params = array_map(function($val) use($link) {
+			return mysqli_real_escape_string($link, $val);
 		}, $params);
 		$query = vsprintf($query, $params);
 		return mysqli_query($link, $query);
